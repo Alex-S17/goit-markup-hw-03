@@ -18,7 +18,19 @@
 }
 
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
 body {
+  margin: 0;
   color: var(--primary-color);
   /* background-color: #fff; */
   font-family: 'Roboto', sans-serif;
@@ -27,10 +39,25 @@ body {
 
 .list {
   list-style: none;
+  padding: 0;
+  margin: 0;
+
 }
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* outline: 2px solid tomato; */
+}
+
+
 
 /* Логотип */
 .logo {
+  margin-right: 93px;
+
   color: inherit;
   text-decoration: none;
   
@@ -47,9 +74,26 @@ body {
 
 /* Site navigation */
 
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex.container {
+  border-bottom: 1px solid #ECECEC;
+}
+
+
+.flex.list .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .nav-link {
   color: inherit;
   text-decoration: none;
+
+  /* outline: 2px solid #188CE8; */
   
   font-weight: 500;
   /* font-size: 14px; */
@@ -61,7 +105,24 @@ body {
   color: var(--accent-color);
 }
 
+.flex.list .nav-link {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 31px;
+}
+
+
+
+
+
 /* Е-мейл и адрес */
+.contacts {
+  display: flex;
+  align-items: center;
+  margin-left: 331px;
+  }
+
+
 .mail-phone {
   color: var(--secondary-color);
   text-decoration: none;
@@ -77,8 +138,24 @@ body {
   color: var(--accent-color);
 }
 
+.contacts.list .item-contacts + .item-contacts {
+  margin-left: 50px;
+}
+
+
 /* Hero */
+.hero {
+  text-align: center;
+
+  /* outline: 2px solid tomato; */
+}
+
 .hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding-top: 200px;
+  /* padding-bottom: 200px; */
+
   color: var(--hero-title-color);
   /* Временный цвет фона для видимости белого заголовка */
   background-color: var(--footer-bgr-color);
@@ -86,13 +163,19 @@ body {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .hero-button {
-    color: var(--accent-button-color);
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  /* border-style: none; */
+  padding: 10px 32px;
+  min-width: 200px;
+
+  color: var(--accent-button-color);
     background-color: var(--accent-bgr-color);
 
     font-family: inherit;
@@ -111,10 +194,19 @@ body {
   cursor: pointer;
 }
 
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 
+.no-padding-top {
+  padding-top: 0;
+}
 /* Наши достоинства */
 
 .section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -122,7 +214,19 @@ body {
   letter-spacing: 0.03em;
 }
 
+.our-advant-set {
+  display: flex;
+  column-gap: 30px;
+}
+
+.our-advant-set .item-adv {
+  flex-basis: calc((100% - 90px) / 4);
+}
+
 .section-subtitle {
+  margin-top: 0;
+  margin-bottom: 10px;
+  
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -131,6 +235,8 @@ body {
 }
 
 .section-paragraph {
+  margin-top: 0;
+  margin-bottom: 0;
   color: var(--secondary-color);
   
   /* font-weight: 400; */
@@ -139,12 +245,29 @@ body {
   letter-spacing: 0.03em;
 }
 
+
+/* Чем мы занимаемся */
+.our-business:not(:last-child) {
+  margin-right: 30px;
+
+}
+
+
 /* Наша команда */
 .grey {
   background-color: var(--our-team-bgr-color);
 }
 
+.team-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+
 .team-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  text-align: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -152,12 +275,15 @@ body {
 }
 
 .team-paragraph {
-  color: var(--secondary-color);
+  margin: 0;
+
   
-  /* font-weight: 400; */
+  text-align: center;
+    /* font-weight: 400; */
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  color: var(--secondary-color);
 }
 
 
@@ -173,13 +299,30 @@ body {
   font-style: normal;
 }
 
+.logo-footer {
+  display: block;
+  margin-right: 0;
+  margin-bottom: 20px;
+  padding-top: 60px;
+
+}
+
 .address-footer {
+  margin: 0;
+
   /* font-weight: 400; */
   /* font-size: 14px; */
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
+.item-footer:not(:first-child) {
+  margin-top: 9px;
+}
+
+.item-footer:last-child {
+  padding-bottom: 60px;
+}
 .link-footer {
   color: var(--link-footer-color);
   text-decoration: none;
@@ -195,7 +338,7 @@ body {
 }
 
 
-/* PORTFOLIO PAGE */
+                  /* PORTFOLIO PAGE */
 
 /* Filter buttons */
 
