@@ -147,13 +147,21 @@ body {
 .hero {
   text-align: center;
 
-  /* outline: 2px solid tomato; */
+  
+  outline: 2px solid tomato;
 }
+
 
 .hero-title {
   margin-top: 0;
   margin-bottom: 30px;
   padding-top: 200px;
+
+margin-left: auto;
+margin-right: auto;
+
+
+
   /* padding-bottom: 200px; */
 
   color: var(--hero-title-color);
@@ -342,9 +350,27 @@ body {
 
 /* Filter buttons */
 
-.filter-buttons {
-  background-color: var(--filter-butt-bgr-col);
+.filter-flex {
+  display: flex;
+}
 
+.filter-flex.list {
+  justify-content: center;
+}
+
+.portfolio-menu:not(:last-child) {
+  margin-right: 8px;
+
+}
+
+.filter-buttons {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 6px 22px;
+
+  background-color: var(--filter-butt-bgr-col);
+  
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -352,6 +378,8 @@ body {
   text-align: center;
   letter-spacing: 0.03em;
 }
+
+
 
 .current-button {
   color: var(--accent-button-color);
@@ -368,6 +396,21 @@ body {
 
 /* Секция с работами из Портфолио  */
 
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+}
+
+.portfolio .portfolio-item {
+  flex-basis: calc ((100% - 60px) / 3);
+}
+
+.portfolio .portfolio-item:nth-child(-n+3) {
+  margin-top: 50px;
+}
+
 .portfolio-link {
   color: inherit;
   text-decoration: none;
@@ -379,6 +422,11 @@ body {
 }
 
 .portfolio-title {
+  margin-top: 20px;
+  margin-right: 24px;
+  margin-bottom: 0;
+  margin-left: 24px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -386,6 +434,11 @@ body {
 }
 
 .portfolio-paragraph {
+  margin-top: 4px;
+  margin-right: 24px;
+  margin-bottom: 20px;
+  margin-left: 24px;
+
   color: var(--secondary-color);
   /* font-weight: 400; */
   font-size: 16px;
