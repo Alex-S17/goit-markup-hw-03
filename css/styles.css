@@ -15,6 +15,9 @@
   --footer-bgr-color: #2F303A;
   --our-team-bgr-color: #F5F4FA;
   --filter-butt-bgr-col: #F5F4FA;
+/* Цвет рамок */
+  --border-bottom-header: #ECECEC;
+  --border-bottom-card: #EEEEEE;
 }
 
 
@@ -81,7 +84,7 @@ body {
 }
 
 .flex.container {
-  border-bottom: 1px solid #ECECEC;
+  border-bottom: 1px solid var(--border-bottom-header);
 }
 
 
@@ -145,24 +148,20 @@ body {
 
 /* Hero */
 .hero {
-  text-align: center;
-
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
   
-  outline: 2px solid tomato;
+  background-color: var(--footer-bgr-color);
+  text-align: center;
+  
+  /* outline: 10px solid tomato; */
 }
-
 
 .hero-title {
   margin-top: 0;
   margin-bottom: 30px;
-  padding-top: 200px;
-
-margin-left: auto;
-margin-right: auto;
-
-
-
-  /* padding-bottom: 200px; */
 
   color: var(--hero-title-color);
   /* Временный цвет фона для видимости белого заголовка */
@@ -401,6 +400,10 @@ margin-right: auto;
   flex-wrap: wrap;
   gap: 30px;
 
+}
+
+.portfolio-item {
+  border-bottom: 1px solid var(--border-bottom-card);
 }
 
 .portfolio .portfolio-item {
